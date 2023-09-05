@@ -33,7 +33,9 @@ jobs:
         with:
           version: ${{ env.ghidra_version }}
       - name: Build Extension
-        run: gradle
+        run: |
+          gradle
+          ls -R
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -42,7 +44,7 @@ jobs:
           retention-days: 1
 
   push_release:
-    if: github.event_name == 'push'
+    if: false
     needs: build_extension
     runs-on: ubuntu-latest
     steps:
