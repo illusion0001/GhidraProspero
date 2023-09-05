@@ -33,13 +33,11 @@ jobs:
         with:
           version: ${{ env.ghidra_version }}
       - name: Build Extension
-        run: |
-          gradle
-          ls -R
+        run: gradle
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: ./dist/*.zip
+          path: dist/*.zip
           if-no-files-found: error
           retention-days: 1
 
