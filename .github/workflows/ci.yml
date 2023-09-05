@@ -42,7 +42,7 @@ jobs:
           retention-days: 1
 
   push_release:
-    if: false
+    if: github.event_name == 'push'
     needs: build_extension
     runs-on: ubuntu-latest
     steps:
