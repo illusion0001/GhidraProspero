@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ghidra: ['11.1.2']
+        ghidra: ['11.1.2', '11.2', '11.2.1']
     steps:
       - name: Set Ghidra version
         run: |
@@ -53,6 +53,9 @@ jobs:
         uses: actions/checkout@main
       - name: Download artifacts
         uses: actions/download-artifact@main
+        with:
+          path: artifact
+          merge-multiple: true
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
