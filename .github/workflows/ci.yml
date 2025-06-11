@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           java-version: 21
+          distribution: adopt
       - name: Setup Ghidra
         uses: er28-0652/setup-ghidra@master
         with:
