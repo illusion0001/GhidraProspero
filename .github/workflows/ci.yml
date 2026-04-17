@@ -32,7 +32,7 @@ jobs:
           java-version: 21
           distribution: adopt
       - name: Setup Ghidra
-        uses: er28-0652/setup-ghidra@master
+        uses: illusionyy/setup-ghidra@main
         with:
           version: ${{ env.ghidra_version }}
       - name: Build Extension
